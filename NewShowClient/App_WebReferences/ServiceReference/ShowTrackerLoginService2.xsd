@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1147/ShowTrackerLoginService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="VenueLite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VenueAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenueAgeRestriction" type="xs:int" />
+      <xs:element minOccurs="0" name="VenueCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenueEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenueLoginPasswordPlain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenueLoginUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenueName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenuePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenueState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenueWebPage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenueZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VenueLite" nillable="true" type="tns:VenueLite" />
+  <xs:complexType name="NewArtist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArtistEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArtistName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Artists" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewArtist" nillable="true" type="tns:NewArtist" />
+  <xs:complexType name="FanLite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FanEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FanLoginPasswordPlain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FanLoginUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FanName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FanLite" nillable="true" type="tns:FanLite" />
+  <xs:complexType name="NewShow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AritstKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowDateEntered" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowDetailAdditional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowDetailArtistStartTime" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ShowDetails" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ShowKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowTicketInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowTime" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Shows" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="VenueKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewShow" nillable="true" type="tns:NewShow" />
+  <xs:complexType name="ArrayOfVenueShow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VenueShow" nillable="true" type="tns:VenueShow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenueShow" nillable="true" type="tns:ArrayOfVenueShow" />
+  <xs:complexType name="VenueShow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VenueShow" nillable="true" type="tns:VenueShow" />
+  <xs:complexType name="ArrayOfArtistShows">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArtistShows" nillable="true" type="tns:ArtistShows" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArtistShows" nillable="true" type="tns:ArrayOfArtistShows" />
+  <xs:complexType name="ArtistShows">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Venue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArtistShows" nillable="true" type="tns:ArtistShows" />
+</xs:schema>

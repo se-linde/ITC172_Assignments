@@ -45,6 +45,41 @@
                 <asp:RequiredFieldValidator ID="ShowTicketInfoRequiredFieldValidator" runat="server" ErrorMessage="Show Ticket Info requiered" ControlToValidate="ShowTicketInfoTextBox"></asp:RequiredFieldValidator>
             </td>
         </tr>
+                <tr>      
+        <td>Venues</td>
+        <td>
+        <asp:DropDownList ID="DropDownListVenue" runat="server"></asp:DropDownList>
+        </td>
+        <td>
+            <asp:HyperLink ID="HyperLink2" runat="server" Target="_blank" NavigateUrl="~/VenueRegistration.aspx">Add Venue</asp:HyperLink></td>
+        </tr>
+                <tr>
+        <td>Artist</td>
+        <td>
+        <asp:DropDownList ID="DropDownListArtist" runat="server"></asp:DropDownList>
+        </td>
+        <td>
+            <asp:HyperLink ID="HyperLink1" runat="server" target="_blank" NavigateUrl="~/AddArtist.aspx">Add Artist</asp:HyperLink></td>
+        </tr> 
+         <tr>
+            <td>Show Artist Start Time</td>
+            <td>
+                <asp:TextBox ID="ShowDetailAritstStartTime" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Show Artist Start Time requiered" ControlToValidate="ShowDetailAritstStartTime"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+
+         <tr>
+            <td>Show Additional Info</td>
+            <td>
+                <asp:TextBox ID="ShowAdditionalDetail" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Show Additional Info requiered" ControlToValidate="ShowAdditionalDetail"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
 
 
         <tr>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ShowTrackerLoginService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1147/ShowTrackerLoginService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1147/ShowTrackerLoginService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1147/ShowTrackerLoginService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost:1147/ShowTrackerLoginService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IShowTrackerLoginService_VenueLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:VenueLogin" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_VenueLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VenueLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_VenueRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:VenueRegistration" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_VenueRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VenueRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_AddArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddArtist" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_AddArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddArtistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_FanLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:FanLogin" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_FanLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FanLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_FanRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:FanRegistration" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_FanRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FanRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_AddShow_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddShow" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_AddShow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddShowResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetArtists_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtists" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetArtists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetVenue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenue" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetVenue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetShow_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShow" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetShow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShowResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetShowsByVenue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShowsByVenue" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetShowsByVenue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShowsByVenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetShowsByArtist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShowsByArtist" />
+  </wsdl:message>
+  <wsdl:message name="IShowTrackerLoginService_GetShowsByArtist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShowsByArtistResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IShowTrackerLoginService">
+    <wsdl:operation name="VenueLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/VenueLogin" message="tns:IShowTrackerLoginService_VenueLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/VenueLoginResponse" message="tns:IShowTrackerLoginService_VenueLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VenueRegistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/VenueRegistration" message="tns:IShowTrackerLoginService_VenueRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/VenueRegistrationResponse" message="tns:IShowTrackerLoginService_VenueRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/AddArtist" message="tns:IShowTrackerLoginService_AddArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/AddArtistResponse" message="tns:IShowTrackerLoginService_AddArtist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FanLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/FanLogin" message="tns:IShowTrackerLoginService_FanLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/FanLoginResponse" message="tns:IShowTrackerLoginService_FanLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FanRegistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/FanRegistration" message="tns:IShowTrackerLoginService_FanRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/FanRegistrationResponse" message="tns:IShowTrackerLoginService_FanRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddShow">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/AddShow" message="tns:IShowTrackerLoginService_AddShow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/AddShowResponse" message="tns:IShowTrackerLoginService_AddShow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArtists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetArtists" message="tns:IShowTrackerLoginService_GetArtists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetArtistsResponse" message="tns:IShowTrackerLoginService_GetArtists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVenue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetVenue" message="tns:IShowTrackerLoginService_GetVenue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetVenueResponse" message="tns:IShowTrackerLoginService_GetVenue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShow">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetShow" message="tns:IShowTrackerLoginService_GetShow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetShowResponse" message="tns:IShowTrackerLoginService_GetShow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShowsByVenue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetShowsByVenue" message="tns:IShowTrackerLoginService_GetShowsByVenue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetShowsByVenueResponse" message="tns:IShowTrackerLoginService_GetShowsByVenue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShowsByArtist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetShowsByArtist" message="tns:IShowTrackerLoginService_GetShowsByArtist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IShowTrackerLoginService/GetShowsByArtistResponse" message="tns:IShowTrackerLoginService_GetShowsByArtist_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IShowTrackerLoginService" type="tns:IShowTrackerLoginService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VenueLogin">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/VenueLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VenueRegistration">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/VenueRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddArtist">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/AddArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FanLogin">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/FanLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FanRegistration">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/FanRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddShow">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/AddShow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArtists">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/GetArtists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVenue">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/GetVenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShow">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/GetShow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShowsByVenue">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/GetShowsByVenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShowsByArtist">
+      <soap:operation soapAction="http://tempuri.org/IShowTrackerLoginService/GetShowsByArtist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShowTrackerLoginService">
+    <wsdl:port name="BasicHttpBinding_IShowTrackerLoginService" binding="tns:BasicHttpBinding_IShowTrackerLoginService">
+      <soap:address location="http://localhost:1147/ShowTrackerLoginService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

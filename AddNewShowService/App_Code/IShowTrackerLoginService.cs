@@ -27,6 +27,21 @@ public interface IShowTrackerLoginService
     [OperationContract]
     int AddShow(NewShow ns);
 
+    [OperationContract]
+    List<string> GetArtists();
+
+    [OperationContract]
+    List<string> GetVenue();
+
+    [OperationContract]
+    List<string> GetShow();
+
+    [OperationContract]
+    List<VenueShow> GetShowsByVenue(string venueName);
+
+    [OperationContract]
+    List<ArtistShows> GetShowsByArtist(string artistName);
+
 }
 
 [DataContract]
@@ -139,3 +154,31 @@ public class NewShow
 
 }
 
+[DataContract]
+public class VenueShow
+{
+    public string Name { set; get; }
+
+    [DataMember]
+    public string Date { set; get; }
+
+    [DataMember]
+    public string Time { set; get; }
+
+}
+
+[DataContract]
+public class ArtistShows
+{
+    public string Name { set; get; }
+
+    [DataMember]
+    public string Date { set; get; }
+
+    [DataMember]
+    public string Time { set; get; }
+
+    [DataMember]
+    public string Venue { set; get; }
+
+}

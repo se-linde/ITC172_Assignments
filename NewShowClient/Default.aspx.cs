@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,8 +18,8 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void VenueLogin()
     {
-        LoginServiceReference1.ShowTrackerLoginServiceClient lsr =
-            new LoginServiceReference1.ShowTrackerLoginServiceClient();
+        ShowTrackerLoginServiceClient lsr =
+            new ShowTrackerLoginServiceClient();
         int key = lsr.VenueLogin(PasswordTextBox.Text, UserNameTextBox.Text);
         if (key != -1)
         {

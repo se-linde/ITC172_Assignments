@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,9 +19,9 @@ public partial class VenueRegistration : System.Web.UI.Page
 
     protected void SubmitVenue()
     {
-        LoginServiceReference1.ShowTrackerLoginServiceClient lsc = new LoginServiceReference1.ShowTrackerLoginServiceClient();
+        ShowTrackerLoginServiceClient lsc = new ShowTrackerLoginServiceClient();
 
-        LoginServiceReference1.VenueLite lLite = new LoginServiceReference1.VenueLite();
+        VenueLite lLite = new VenueLite();
 
         lLite.VenueName = VenueNameTextBox.Text;
         lLite.VenueAddress = VenueAddressTextBox.Text;
