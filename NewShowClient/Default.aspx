@@ -7,8 +7,12 @@
     <title></title>
 </head>
 <body>
+    <h1>Steve Conger's Show Tracker Northwest</h1>
+
+    <!-- Venue Login -->
+   <div id="venueShowTracker">
     <form id="form1" runat="server">
-    <div>
+        <div>
         <table>
         <tr>
             <td>User Name</td>
@@ -35,10 +39,11 @@
 
         </tr>
         </table>
-     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/VenueRegistration.aspx">Registration</asp:HyperLink>
-
-    
-    </div>
+     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/VenueRegistration.aspx" Target="_blank">Registration</asp:HyperLink>
+            </div>
     </form>
+    </div>
+
+
 </body>
 </html>

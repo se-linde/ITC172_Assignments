@@ -192,6 +192,85 @@ public class ShowTrackerLoginService : IShowTrackerLoginService
         }
         return ArtistShows;
     }
+ public int AddFanArtist( int fanKey, string artistName)
+    {
+        /*********************************
+         * This method will add an artist to the artistFan
+         * table. First we have to find the fan
+         * and then the particular artist
+         * Then we add the artist to the Fan's list
+         * of artists to follow
+         * **********************************/
+        int result = 1;
+
+        //get the fan. the key can come from their login
+        Fan myFan = (from f in db.Fans
+                     where f.FanKey == fanKey
+                     select f).First();
+
+        //get the artist by name
+        Artist myArtist = (from a in db.Artists
+                           where a.ArtistName.Equals(artistName)
+                           select a).First();
+
+        //add the artist to the fan;'s collection of artists
+        myFan.Artists.Add(myArtist);
+
+        //save the changes
+        db.SaveChanges();
+
+        return result;
+    }
+
+public List<NewShow> GetShowsForFanArtists(int fanKey)
+    {
+        //get the fan
+        Fan myFan = (from f in db.Fans
+                     where f.FanKey == fanKey
+                     select f).First();
+
+        List<NewShow> shows = new List<NewShow>();
+
+        //this loop within a loop is very inefficient
+         foreach(Artist a in myFan.Artists)
+         {
+             //get all the shows for the fan
+             var shws = from s in db.Shows
+                        from sd in s.ShowDetails
+                        where sd.ArtistKey == a.ArtistKey
+                        select new
+                        {
+                            s.ShowName,
+                            s.ShowTime,
+                            s.ShowDate,
+                            s.ShowTicketInfo,
+                            s.Venue.VenueName,
+                            sd.Artist.ArtistName
+                        };
+
+             //loop through the shows and write them to 
+             //ShowInfo objects then add those objects
+             //to the list
+             foreach(var sh in shws)
+             {
+                 NewShow info = new NewShow();
+                 info.ShowName = sh.ShowName;
+                 info.ShowDate = sh.ShowDate.ToString();
+                 info.ShowTime = sh.ShowTime.ToString();
+                 info.TicketInfo = sh.ShowTicketInfo;
+                 info.VenueName = sh.VenueName;
+                 info.ArtistName = sh.ArtistName;
+
+                 shows.Add(info);
+             }
+             
+             
+         }
+         return shows;
+                  
+    }
+
+
  /*   public int ShowRegistration(NewShow ns)
     {
         //int result = db.usp_RegisterVenue(r.VenueName, r.VenueAddress, r.VenueCity, r.VenueState, r.VenueZipCode, r.VenuePhone, r.VenueEmail, r.VenueWebPage, r.VenueAgeRestriction, r.VenueLoginUserName, r.VenueLoginPasswordPlain);

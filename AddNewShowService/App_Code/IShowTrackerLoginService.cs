@@ -42,6 +42,15 @@ public interface IShowTrackerLoginService
     [OperationContract]
     List<ArtistShows> GetShowsByArtist(string artistName);
 
+    [OperationContract]
+    int AddFanArtist(int fanKey, string artistName);
+
+    [OperationContract]
+    List<NewShow> GetShowsForFanArtists(int fanKey);
+
+    [OperationContract]
+    protected void AddArtists();
+
 }
 
 [DataContract]
@@ -150,6 +159,14 @@ public class NewShow
 
     [DataMember]
     public List<String> Shows { set; get; }
+
+    [DataMember]
+    public string TicketInfo { set; get; }
+
+    [DataMember]
+    public string VenueName { set; get; }
+    [DataMember]
+    public string ArtistName { set; get; }
 
 
 }
